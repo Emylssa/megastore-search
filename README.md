@@ -33,7 +33,7 @@ megastore-search/
    cd megastore-search
 
  ##  Execute o sistema:
-cargo run
+- digite: cargo run
 
 ## Digite um termo de busca como:
 nike
