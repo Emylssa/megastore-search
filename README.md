@@ -1,53 +1,50 @@
 # Sistema de Busca Otimizado para Catálogo de Produtos – MegaStore
 
-Este projeto simula um sistema de busca eficiente para um e-commerce com milhões de produtos, utilizando a linguagem **Rust** e técnicas de otimização como **tabelas hash**, **pré-processamento de texto** e **cache**.
+## 🧾 Descrição do Projeto
 
-## 🎯 Objetivo
+Este projeto tem como objetivo o desenvolvimento de um sistema de busca eficiente, escalável e seguro para um catálogo de e-commerce com milhões de produtos, representado pela empresa fictícia MegaStore. A aplicação foi desenvolvida em Rust e utiliza estruturas de dados otimizadas como **tabelas hash**, técnicas de **pré-processamento textual** e **cache** para garantir rapidez e relevância nas buscas.
 
-Desenvolver um sistema de busca eficiente, escalável e seguro para o catálogo da MegaStore, otimizando o tempo de resposta e a precisão dos resultados.
+## 🛠 Tecnologias Utilizadas
 
-## 📦 Tecnologias Utilizadas
+- Linguagem: **Rust** (edition 2021)
+- Crates (bibliotecas):
+  - `std::collections::HashMap`: para indexação e cache
+  - `lazy_static`: para simulação de banco de dados em memória (opcional)
+  - `regex`: para normalização e limpeza de texto (pré-processamento)
+- Ferramentas:
+  - `cargo`: Gerenciador de pacotes e build do Rust
+  - `cargo test`: Execução de testes automatizados
 
-- **Rust** (Edition 2021)
-- `std::collections::HashMap`
-- Terminal interativo via `cargo run`
+## 🚀 Como Executar o Sistema de Busca
 
-## 📁 Estrutura do Projeto
+### Pré-requisitos:
+- Ter o Rust instalado: https://www.rust-lang.org/tools/install
 
-megastore-search/
-├── Cargo.toml
-├── src/
-│   ├── main.rs
-│   ├── models.rs
-│   ├── index.rs
-│   ├── preprocess.rs
-│   └── cache.rs
-├── tests/
-│   └── integration.rs
+### Comandos:
 
-## 🚀 Como Executar o Projeto
+```bash
+# Clone o repositório
+git clone https://github.com/Emylssa/megastore-search.git
+cd megastore-search
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Emylssa/megastore-search.git
-   cd megastore-search
+# Execute o projeto
+cargo run
+Você verá no terminal:
+Digite um termo de busca (ou 'sair'):
 
- ##  Execute o sistema:
-- digite: cargo run
-
-## Digite um termo de busca como:
+# Digite um termo como:
 nike
+notebook
 informática
-tênis
+samsung
 
-## Para sair do programa:
-sair
+Para sair, digite: sair
 
-## executar os Testes
-Para verificar se tudo está funcionando corretamente:
+## Como Executar os Testes 🧪
 cargo test
 
-## Produto simulado:
+📝 Exemplos de Uso
+Produto Simulado:
 
 Produto {
     id: 3,
@@ -56,17 +53,58 @@ Produto {
     categoria: "Calçados",
 }
 
-## Busca:
-Digite um termo de busca (ou 'sair'): nike
-
-## Saída esperada:
+## Resultado Esperado:
 Produtos encontrados: [3]
 
-## Busca repetida:
+Busca repetida:
 [CACHE] Produtos encontrados: [3]
 
+🧩 Arquitetura do Sistema
+
+megastore-search/
+├── Cargo.toml
+├── src/
+│   ├── main.rs         # Função principal e execução do loop de busca
+│   ├── models.rs       # Definição da struct Produto
+│   ├── index.rs        # Indexação de produtos com HashMap
+│   ├── preprocess.rs   # Pré-processamento de texto (limpeza e normalização)
+│   └── cache.rs        # Sistema de cache para buscas repetidas
+├── tests/
+│   └── integration.rs  # Testes de integração e validação de funcionalidades
 
 
-🪪 Licença
-Este projeto é fictício e acadêmico, criado para fins educacionais no curso de Análise e Desenvolvimento de Sistemas do Centro Universitário UniFECAF.
 
+### 📚 Algoritmos e Estruturas de Dados Utilizados
+Tabelas Hash (HashMap):
+
+Usadas para indexar rapidamente os produtos com base nos termos de busca.
+O acesso é O(1) em média, garantindo performance mesmo com grandes volumes de dados.
+
+#Busca por palavras-chave com pré-processamento:
+Eliminação de stop words, conversão para minúsculas, remoção de pontuações.
+
+#Sistema de Cache:
+Armazena os resultados de buscas recentes para evitar reprocessamento.
+
+###⚙️ Considerações sobre Desempenho e Escalabilidade
+
+Desempenho:
+As buscas são feitas em tempo constante (O(1)) devido ao uso de HashMap.
+A reutilização via cache reduz chamadas repetidas e melhora tempo de resposta.
+
+#Escalabilidade:
+O sistema é modular e pode ser expandido para funcionar com:
+Banco de dados real
+APIs externas
+Frameworks web (como Actix-web)
+
+#Testes
+
+Simulações foram feitas com dezenas de produtos e múltiplas buscas.
+Tempo de resposta foi instantâneo mesmo com simulação de 1000+ entradas.
+
+
+
+
+🚨 Este projeto é fictício e criado para fins educacionais como parte do curso de Análise e Desenvolvimento de Sistemas no Centro Universitário UniFECAF.
+Uso livre para fins de aprendizagem.
