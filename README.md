@@ -32,22 +32,22 @@ megastore-search/
    git clone https://github.com/Emylssa/megastore-search.git
    cd megastore-search
 
-   Execute o sistema:
+ ##  Execute o sistema:
 cargo run
 
-Digite um termo de busca como:
+## Digite um termo de busca como:
 nike
 informática
 tênis
 
-Para sair do programa:
+## Para sair do programa:
 sair
 
-executar os Testes
+## executar os Testes
 Para verificar se tudo está funcionando corretamente:
 cargo test
 
-Produto simulado:
+## Produto simulado:
 
 Produto {
     id: 3,
@@ -55,17 +55,18 @@ Produto {
     marca: "Nike",
     categoria: "Calçados",
 }
-Busca:
+
+## Busca:
 Digite um termo de busca (ou 'sair'): nike
 
-Saída esperada:
+## Saída esperada:
 Produtos encontrados: [3]
 
-Busca repetida:
+## Busca repetida:
 [CACHE] Produtos encontrados: [3]
 
 
 
-Licença
+🪪 Licença
 Este projeto é fictício e acadêmico, criado para fins educacionais no curso de Análise e Desenvolvimento de Sistemas do Centro Universitário UniFECAF.
 
